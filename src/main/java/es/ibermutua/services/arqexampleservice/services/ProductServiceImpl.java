@@ -21,6 +21,7 @@ public class ProductServiceImpl implements ProductService {
 		return (List<Product>)productRepository.findAll();
 	}
 	@Override
+	@Transactional(rollbackFor = Exception.class)
 	public Product saveProduct(Product product) {
 		return productRepository.save(product);
 	}
