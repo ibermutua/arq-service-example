@@ -1,9 +1,8 @@
 package es.ibermutua.services.arqexampleservice.dao.repositories;
 
+import es.ibermutua.services.arqexampleservice.dao.domain.Product;
 import org.springframework.data.repository.CrudRepository;
 
-import es.ibermutua.services.arqexampleservice.dao.domain.Product;
-
-public interface ProductRepository extends CrudRepository<Product, Long>{
+public interface ProductRepository extends CrudRepository<Product, Long> {
 
 }
