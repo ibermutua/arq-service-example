@@ -18,4 +18,11 @@ public class TestUtils {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(json, clazz);
     }
+    public static String getStringWithSize(int size){
+        StringBuilder s = new StringBuilder();
+        while (s.length() < size){
+            s.append("a");
+        }
+        return s.toString();
+    }
 }

@@ -1,10 +1,6 @@
 package es.ibermutua.services.arqexampleservice.dao.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -16,7 +12,7 @@ import lombok.Data;
 @Data
 public class Product {
 	@Id
-	@GeneratedValue
+	@GeneratedValue	(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
 	@ApiModelProperty(notes = "The database generated product ID")
     private Long id;
