@@ -1,4 +1,4 @@
-package es.ibermutua.services.arqexampleservice.data.domain;
+package es.ibermutua.services.arqexampleservice.dao.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,15 +21,15 @@ public class Product {
 	@ApiModelProperty(notes = "The database generated product ID")
     private Long id;
 	
-	@Column(name = "NOMBRE", nullable = false)
+	@Column(name = "NOMBRE", nullable = false, length = 100)
 	@ApiModelProperty(notes = "The product name")
     private String nombre;
 	
-	@Column (name ="DESCRIPCION")
+	@Column (name ="DESCRIPCION", length = 300)
 	@ApiModelProperty(notes = "The product description")
 	private String descripcion;
 	
-	@Column (name ="NUMERO_SERIE")
+	@Column (name ="NUMERO_SERIE", length = 10)
 	@ApiModelProperty(notes = "The product serial number")
 	private String numeroSerie;
 	

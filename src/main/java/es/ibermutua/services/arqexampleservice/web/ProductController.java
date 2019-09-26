@@ -1,4 +1,4 @@
-package es.ibermutua.services.arqexampleservice.controllers;
+package es.ibermutua.services.arqexampleservice.web;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.ibermutua.services.arqexampleservice.data.domain.Product;
-import es.ibermutua.services.arqexampleservice.services.ProductService;
+import es.ibermutua.services.arqexampleservice.dao.domain.Product;
+import es.ibermutua.services.arqexampleservice.business.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -40,7 +40,7 @@ public class ProductController {
 		return productService.getAllProducts ();
 	}
 	
-	@PostMapping(path="/products", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@PostMapping(path="/product", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ApiOperation(value = "Save a product", response = Product.class)
 	@ApiResponses(value = {
 		    @ApiResponse(code = 200, message = "Successfully saved product"),

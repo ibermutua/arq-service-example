@@ -1,8 +1,8 @@
-package es.ibermutua.services.arqexampleservice.services;
+package es.ibermutua.services.arqexampleservice.business;
 
 import java.util.List;
 
-import es.ibermutua.services.arqexampleservice.data.domain.Product;
+import es.ibermutua.services.arqexampleservice.dao.domain.Product;
 
 public interface ProductService {
 

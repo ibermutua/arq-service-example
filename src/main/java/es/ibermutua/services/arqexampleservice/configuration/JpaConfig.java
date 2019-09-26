@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan("es.ibermutua.services.arqexampleservice")
-@EntityScan(basePackages = {"es.ibermutua.services.arqexampleservice.data.domain"})
-@EnableJpaRepositories(basePackages = {"es.ibermutua.services.arqexampleservice.repositories"})
+@EntityScan(basePackages = {"es.ibermutua.services.arqexampleservice.dao.domain"})
+@EnableJpaRepositories(basePackages = {"es.ibermutua.services.arqexampleservice.dao.repositories"})
 @EnableAutoConfiguration
 @EnableTransactionManagement
 public class JpaConfig {
