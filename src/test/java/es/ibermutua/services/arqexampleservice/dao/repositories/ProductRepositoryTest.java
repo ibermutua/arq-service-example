@@ -10,6 +10,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @DataJpaTest
 @RunWith(SpringRunner.class)
 public class ProductRepositoryTest {
@@ -47,6 +49,16 @@ public class ProductRepositoryTest {
 		Iterable<Product> products = repository.findAll();
 		Assertions.assertThat(products).hasSize(nProductsExpected + 1);
 
+	}
+	@Test
+	public void should_return_product_when_find_by_name(){
+		List<Product> products = repository.findProductsByNombre("producto 1");
+		Assertions.assertThat(products).hasSize(1);
+	}
+	@Test
+	public void should_return_product_empty_list_when_find_by_name_dont_retrieve_data(){
+		List<Product> products = repository.findProductsByNombre("producto 131");
+		Assertions.assertThat(products).isNotNull().hasSize(0);
 	}
 
 	private Product getProductToAdd() {

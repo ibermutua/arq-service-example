@@ -7,10 +7,13 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -18,7 +21,8 @@ import java.util.List;
 public class ProductController {
 	@Autowired
 	ProductService productService;
-
+	@Autowired
+	MessageSource messageSource;
 
 	@ApiOperation(value = "View a list of products", response = List.class)
 	@ApiResponses(value = {
@@ -30,6 +34,7 @@ public class ProductController {
 	})
 	@GetMapping(path = "/products", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<Product> getAllProducts() {
+		System.out.println( messageSource.getMessage("mensaje.prueba", null, LocaleContextHolder.getLocale()));
 		return productService.getAllProducts();
 	}
 
