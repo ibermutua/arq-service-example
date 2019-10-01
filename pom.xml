@@ -79,12 +79,6 @@
         	<artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.i3g.sirocco10/siroccosoapclient -->
-        <dependency>
-            <groupId>com.i3g.sirocco10</groupId>
-            <artifactId>siroccosoapclient</artifactId>
-            <version>2.0</version>
-        </dependency>
 
 
     </dependencies>

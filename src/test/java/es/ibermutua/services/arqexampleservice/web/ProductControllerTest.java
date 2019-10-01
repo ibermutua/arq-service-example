@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -38,6 +39,7 @@ public class ProductControllerTest {
 	ProductService service;
 
 	@Test
+	
 	public void testFindProductsReturnsArray() throws Exception {
 
 		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(getURI("/api/v1/products"))
@@ -49,10 +51,10 @@ public class ProductControllerTest {
 		Product[] productlist = TestUtils.mapFromJson(content, Product[].class);
 		Assert.assertNotNull(productlist);
 	}
-
 	@Test
 	public void testPostProduct() throws Exception {
 		Product prToAdd = new Product();
+		//prToAdd.setId(1L);
 		prToAdd.setDescripcion("HOLA");
 		prToAdd.setNombre("NALA");
 		prToAdd.setNumeroSerie("11111");
@@ -80,7 +82,6 @@ public class ProductControllerTest {
 				.andExpect(MockMvcResultMatchers.jsonPath("$.id").isNumber());
 
 	}
-
 	private URI getURI(String path) throws URISyntaxException {
 		return new URI("http://localhost:" + randomServerPort + path);
 	}
