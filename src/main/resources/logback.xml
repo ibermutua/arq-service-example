@@ -40,11 +40,6 @@
     <logger name="es.ibermutua.services.arqexampleservice" additivity="false">
         <level value="INFO" />
         <appender-ref ref="dailyRollingFileAppender"/>
-        <!--<appender-ref ref="consoleAppender" />-->
-    </logger>
-    <logger name="com.cualtis.dulcinea2" additivity="false">
-        <level value="INFO" />
-        <appender-ref ref="dailyRollingFileAppender"/>
         <appender-ref ref="consoleAppender" />
     </logger>
     <logger name="org.springframework" additivity="false">
